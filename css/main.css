@@ -1,0 +1,1192 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap");
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+:root {
+  /*Changed the hard-coded values for root variables*/
+  --headingFont: "Rubik", sans-serif;
+  --bodyFont: "Rubik", sans-serif;
+  --smallText: 0.75em;
+  /*Colors Setup*/
+  /* primary color */
+  --clr-blue: #29285d;
+
+  /* secondary color */
+  --clr-teal: #10abaf;
+
+  /* tertiary color */
+  --clr-orange-1: #ff7531;
+  --clr-orange-5: #df682c;
+  --clr-orange-10: #b15425;
+
+  /* accent color */
+  --clr-green-5: #61a15d;
+  --clr-green-10: #467242;
+  --clr-yellow: #ffc823;
+
+  /* grey colors */
+  --clr-grey-1: #fafafa;
+  --clr-grey-3: rgba(0, 20, 91, 0.71);
+  --clr-grey-5: #535552;
+  --clr-grey-7: #334155;
+  --clr-grey-9: #0f172a;
+
+  /* standard colors */
+  --black: #222;
+  --white: #fff;
+  --danger-light: #f8d7da;
+  --danger-dark: #842029;
+  --success-light: #d1e7dd;
+  --success-dark: #0f5132;
+
+  /*theme colors*/
+  --background-clr: var(--white);
+  --text-clr: var(--clr-grey-5);
+
+  /*shadow*/
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-3: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* some perks */
+  --radius: 0.9375rem;
+  --letter-spacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 660px; /*makes shure no matter the screen size, the div will remain the same size*/
+
+  /* Hover card */
+
+  --level-one: translateZ(3rem);
+  --level-two: translateZ(6rem);
+  --level-three: translateZ(9rem);
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+}
+
+.container {
+  padding: 4rem 0;
+  width: 85vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+/* 
+==============
+Images fix
+==============
+*/
+
+/* Creating an image class, allows more control over general images, if the element img is target, you will probably want an img:not() for logos and other things */
+.img {
+  width: 100%; /*span 100% accross the parent container*/
+  display: block; /*if not set, there is a weird space in the bottom of the image*/
+  object-fit: cover;
+  max-width: var(--max-width);
+}
+
+/* 
+==============
+Buttons
+==============
+*/
+
+.btn {
+  cursor: pointer;
+  font-size: 0.9375rem;
+  font-weight: 300;
+  border: transparent;
+  border-radius: var(--radius);
+  padding: 1.375rem 2.25rem;
+  margin: 1rem;
+  box-shadow: var(--shadow-2);
+  transition: var(--transition);
+  text-transform: uppercase;
+  border-style: solid;
+  border-width: 2px;
+  display: inline-block; /*also respects vertical margin and you can change position based on the parent. Depending on the situation, you might change it to display:block.*/
+}
+
+.btn-orange {
+  background: var(--clr-orange-5);
+  color: var(--white);
+}
+
+.btn-orange:hover {
+  background: var(--clr-orange-10);
+  color: var(--white);
+}
+.btn-green {
+  background: var(--clr-green-5);
+  color: var(--white);
+}
+
+.btn-green:hover {
+  background: var(--clr-green-10);
+  color: var(--white);
+}
+.btn-blue {
+  background: var(--clr-blue);
+  color: var(--clr-yellow);
+}
+
+.btn-blue:hover {
+  background: var(--clr-yellow);
+  color: var(--clr-blue);
+}
+.btn-yellow {
+  background: var(--clr-yellow);
+  color: var(--clr-blue);
+}
+
+.btn-yellow:hover {
+  background: var(--clr-blue);
+  color: var(--clr-yellow);
+}
+
+.btn-outline {
+  background: transparent;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Special Buttons */
+
+.btn-outline-teal {
+  border-color: var(--clr-teal);
+  color: var(--clr-teal);
+}
+.btn-outline-teal:hover {
+  border-color: var(--clr-teal);
+  background: var(--clr-teal);
+  color: var(--white);
+}
+.btn-outline-yellow {
+  border-color: var(--clr-yellow);
+  color: var(--clr-yellow);
+}
+.btn-outline-yellow:hover {
+  border-color: var(--clr-yellow);
+  background: var(--clr-yellow);
+  color: var(--clr-blue);
+}
+
+a.btn-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 
+==============
+Form
+==============
+*/
+.form {
+  width: 90vw;
+  max-width: var(--fixed-width);
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-2);
+  padding: 2rem 2.5rem;
+  margin: 3rem auto;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--smallText);
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  letter-spacing: var(--letter-spacing);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.375rem;
+  border-radius: var(--radius);
+  background: var(--clr-grey-1);
+  border: 1px solid var(--clr-grey-3);
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-textarea {
+  height: 7rem;
+}
+
+::placeholder {
+  font-family: inherit;
+  color: var(--clr-grey-5);
+}
+
+.form-alert {
+  color: var(--danger-dark);
+}
+
+/* 
+==============
+Title
+==============
+*/
+
+.title {
+  text-align: center;
+}
+
+/* 
+==============
+Fonts
+code from https://type-scale.com/ with modifications commented bellow
+==============
+*/
+
+html {
+  font-size: 0.9375rem;
+} /*15px*/
+
+body {
+  background: var(--background-clr);
+  font-family: var(--bodyFont); /*root variable*/
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--text-clr);
+}
+
+p {
+  margin-bottom: 1.5rem; /*value changed from 1 to 1.5*/
+  max-width: 40em; /*added a max-width so p won't spam all accross the page*/
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0; /*removed margins 'cause it can be a pain*/
+  margin-bottom: 1.38rem; /*added margin only for bottom*/
+  font-family: var(--headingFont); /*root variable*/
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase; /*added custom*/
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small,
+.text-small {
+  font-size: var(--smallText); /*root variable*/
+}
+
+.main-title {
+  font-family: var(--headingFont);
+  font-size: 40px;
+  line-height: 56px;
+  text-transform: uppercase;
+}
+
+.sub-title {
+  font-family: var(--headingFont);
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+/* 
+==============
+Links and Lists
+==============
+*/
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* 
+=========================================
+Website Sections
+=========================================
+*/
+
+/* 
+==============
+Top Header
+==============
+*/
+
+.main-header {
+  margin: 2rem 3rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.header-contact {
+  display: none;
+}
+
+.top-header img {
+  width: 300px;
+  margin-bottom: 1rem;
+}
+
+a .fa-whatsapp {
+  font-size: 1.5rem;
+  margin-right: 0.4rem;
+}
+
+@media screen and (min-width: 992px) {
+  .top-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+  }
+
+  .top-header img {
+    width: 300px;
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  /* formating top header contact info */
+
+  .header-contact {
+    display: inherit;
+  }
+
+  .header-contact {
+    display: grid;
+    grid-template-columns: 10% 1fr;
+    align-items: center;
+    gap: 1.2rem;
+    margin-right: 2rem;
+  }
+
+  .header-contact-info h4 {
+    font-size: 16px;
+    color: var(--clr-green-5);
+    text-transform: capitalize;
+    text-align: left;
+    margin-bottom: 0.4rem;
+  }
+  .header-contact-info h3 {
+    font-size: 18px;
+    color: var(--clr-blue);
+    text-align: left;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  .header-contact i {
+    font-size: 27px;
+    color: var(--clr-orange-5);
+  }
+
+  /* end of formating top header contact info */
+}
+
+/* 
+==============
+Navbar
+==============
+*/
+
+.navbar {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--clr-grey-1);
+  box-shadow: var(--dark-shadow);
+  z-index: 2;
+}
+
+.nav-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-toggle {
+  background: transparent;
+  border: transparent;
+  font-size: 1.5rem;
+  color: var(--clr-orange-1);
+  cursor: pointer;
+  transition: var(--transition);
+  margin: 0 auto;
+}
+
+.nav-toggle:hover {
+  transform: scale(1.2);
+}
+
+.nav-link {
+  display: block;
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  transition: var(--transition);
+  color: var(--clr-green-5);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  color: var(--clr-primary-1);
+  background: var(--clr-primary-8);
+  padding-left: 2.25rem;
+}
+
+.nav-links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.show-links {
+  height: 580px;
+}
+
+@media screen and (min-width: 990px) {
+  .nav-center {
+    width: 100%;
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+
+  .nav-header {
+    display: none;
+  }
+
+  .nav-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-links {
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+  }
+
+  .nav-link {
+    padding: 0 0;
+    margin-right: 0.7rem;
+  }
+  .nav-link:hover {
+    padding: 0 0;
+    background: transparent;
+    color: var(--clr-orange-1);
+  }
+  .nav-icons {
+    display: flex;
+  }
+}
+
+/* 
+==============
+Banner 
+==============
+*/
+
+.banner {
+  padding: 3rem 0 0 0;
+  background-image: url("/img/fundo-slide-principal.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  text-align: center;
+  padding-bottom: 0;
+}
+
+.banner-info {
+  padding-bottom: 2rem;
+}
+
+.banner-subtitle {
+  color: var(--clr-teal);
+  font-size: 21px;
+  line-height: 21px;
+  text-transform: none;
+  font-weight: 300;
+}
+.banner-title {
+  color: var(--clr-blue);
+  font-size: 58px;
+  line-height: 58px;
+  text-transform: none;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 992px) {
+  .split-section {
+    text-align: left;
+  }
+
+  .banner-buttons {
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+    gap: 1rem;
+  }
+}
+
+/* 
+==============
+Sobre nós 
+==============
+*/
+
+.sobre-nos {
+  background: var(--clr-teal);
+  color: var(--clr-grey-1);
+  padding: 4rem 0 4rem 0;
+}
+
+.sobre-nos .container {
+  position: relative;
+}
+.sobre-nos .container .bg-img {
+  position: absolute;
+  opacity: 0.1;
+  left: -60%;
+  width: 700px;
+}
+
+.sobre-header {
+  z-index: 2;
+}
+
+.sobre-header img {
+  max-width: 15rem;
+  margin: 0 auto;
+}
+
+.sobre-header h4 {
+  font-size: 15px;
+  padding-top: 3rem;
+}
+.sobre-header h2 {
+  font-size: 33px;
+  text-transform: none;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 992px) {
+  .sobre-nos .container .bg-img {
+    position: absolute;
+    opacity: 0.1;
+    max-width: 40rem;
+    left: -200px;
+  }
+
+  .sobre-header img {
+    max-width: 15rem;
+    margin: 0;
+  }
+}
+
+/* 
+==============
+Features 
+==============
+*/
+.features {
+  position: relative;
+}
+.features .quadrados {
+  position: absolute;
+  width: 300px;
+  left: -20rem;
+  top: 10rem;
+}
+.features-header {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.features-subtitle {
+  color: var(--clr-orange-5);
+  text-transform: capitalize;
+  font-size: 15px;
+}
+.features-title {
+  color: var(--clr-green-5);
+  text-transform: none;
+  font-size: 30px;
+}
+
+.features-header img {
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+/* cards */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  row-gap: 3rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.card {
+  width: 250px;
+}
+.card i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  transform: var(--level-three);
+  order: 2;
+  color: var(--clr-orange-1);
+}
+
+.card__content {
+  text-align: center;
+  position: relative;
+  padding: 8em 5em;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card__content {
+  transform: rotateY(0.5turn);
+}
+
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5em 3em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  display: grid;
+  align-content: center;
+}
+
+.card__front {
+  background-color: var(--white);
+  /* background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/fair.jpg); */
+  background-size: cover;
+  background-blend-mode: overlay;
+  color: var(--clr-blue);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.card__title {
+  font-size: 20px;
+  transform: var(--level-three);
+  order: 2;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+.card__subtitle {
+  transform: var(--level-two);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  opacity: 0.7;
+}
+
+.card__body {
+  transform: var(--level-two);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.card__back {
+  transform: rotateY(0.5turn);
+  color: var(--white);
+  background: var(--clr-green-10);
+  font-weight: 300;
+}
+
+/* 
+==============
+Cirurgias 
+==============
+*/
+
+.cirurgias {
+  background-color: whitesmoke;
+  margin-top: 4rem;
+}
+
+.cirurgias-img {
+  background-image: url(/img/senhora-usando-laptop2.jpg);
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cirurgias-info {
+  width: 85vw;
+  margin: 4rem auto;
+}
+
+.cirurgias-info h4 {
+  color: var(--clr-blue);
+}
+.cirurgias-info h1 {
+  color: var(--clr-orange-5);
+}
+
+.botoes-cirurgias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media screen and (min-width: 768px) {
+  .cirurgias-info {
+    width: inherit;
+    margin: 1rem auto;
+    padding: 4rem 6rem;
+  }
+
+  .cirurgias-img {
+    height: 100%;
+  }
+}
+/* 
+==============
+Exames 
+==============
+*/
+
+.exames {
+  background-color: #df692c;
+}
+
+.exames-img {
+  background-image: url(/img/home-usando-oculos-jovem2.jpg);
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.exames-info {
+  width: 85vw;
+  margin: 4rem auto;
+}
+
+.exames-info h4 {
+  color: var(--clr-blue);
+}
+.exames-info h1 {
+  color: var(--clr-yellow);
+}
+
+.botoes-exames {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media screen and (min-width: 768px) {
+  .exames {
+    height: 80vh;
+  }
+  .exames-info {
+    width: inherit;
+    margin: 1rem auto;
+    padding: 4rem 10rem;
+  }
+
+  .exames-img {
+    height: 100%;
+  }
+}
+
+/* 
+==============
+Lentes
+==============
+*/
+
+.lentes {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 4rem 0;
+}
+
+.lentes::after {
+  content: " ";
+  background: url(/img/homem-lentes-decontato.jpg) no-repeat center bottom;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-size: contain;
+  z-index: -1;
+}
+
+.lentes-info {
+  text-align: left;
+  width: 85vw;
+}
+
+.lentes-info h1 {
+  color: var(--clr-green-5);
+}
+.lentes-info h4 {
+  color: var(--clr-orange-5);
+}
+
+@media screen and (min-width: 992px) {
+  .lentes {
+    justify-content: end;
+    align-items: center;
+    justify-items: center;
+    height: 130vh;
+  }
+
+  .lentes::after {
+    content: " ";
+    background: url(/img/homem-lentes-decontato.jpg) no-repeat;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  .lentes-info {
+    width: 30vw;
+    margin-right: 16rem;
+  }
+  .lentes-info p {
+    max-width: inherit;
+  }
+}
+
+/* 
+==============
+Unidades
+==============
+*/
+
+.unidades .container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-unidades {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+
+.title-unidades {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.header-unidades h3 {
+  display: inline-block;
+  margin-bottom: 0;
+  color: var(--clr-orange-5);
+}
+.header-unidades h4 {
+  display: inline-block;
+  margin-bottom: 0;
+  color: var(--clr-teal);
+}
+
+.header-unidades img {
+  height: 50px;
+}
+
+.single-unidade {
+  text-align: center;
+}
+
+.unidade-title {
+  color: var(--clr-blue);
+  text-transform: capitalize;
+}
+
+.unidades-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 4rem;
+}
+
+@media screen and (min-width: 992px) {
+  .title-unidades {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .header-unidades h3 {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  .unidades .container .btn-yellow {
+    align-self: center;
+  }
+
+  .single-unidade {
+    text-align: left;
+  }
+}
+
+/* 
+==============
+Convênios
+==============
+*/
+
+.convenios {
+  background: var(--clr-grey-1);
+}
+
+.convenios .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.header-convenios h4 {
+  color: var(--clr-green-5);
+  text-align: center;
+}
+.header-convenios h3 {
+  color: var(--clr-teal);
+  text-align: center;
+}
+
+.convenios-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: space-between;
+  align-items: flex-start;
+  column-gap: 4rem;
+  margin-top: 4rem;
+}
+
+.convenio {
+  font-size: 1.6rem;
+  color: var(--clr-blue);
+}
+.convenio span {
+  font-family: var(--bodyFont);
+}
+
+@media screen and (min-width: 992px) {
+  .convenios-info {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: space-between;
+    align-items: flex-start;
+    column-gap: 4rem;
+  }
+}
+
+/* 
+==============
+Forms
+==============
+*/
+
+.contato {
+  background: url(/img/crianca-oculos-feliz3.jpg) no-repeat;
+  background-size: cover;
+  padding-bottom: 6rem;
+}
+
+.contato-info {
+  margin-bottom: 2rem;
+}
+.contato-info h2 {
+  color: var(--white);
+  font-size: 1.9rem;
+}
+
+.contato-info p {
+  display: none;
+}
+
+/* Form */
+
+.contato-form {
+  background: var(--white);
+  border-radius: 1rem;
+  padding: 4rem;
+}
+
+.contato-form img {
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.contato-form h4 {
+  text-transform: inherit;
+  color: var(--clr-blue);
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.campos-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: inherit;
+  justify-content: flex-start;
+}
+
+.campos-form input,
+label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.campos-form input {
+  width: 100%;
+}
+
+.campos-form label {
+  color: var(--clr-blue);
+  font-size: 16px;
+  text-align: left;
+}
+
+.campos-form input,
+select {
+  color: var(--clr-blue);
+  font-size: 16px;
+  padding: 0.7rem 0.9rem;
+  border-radius: 5px;
+  border: 1px solid #cad5eb;
+}
+.campos-form select {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .contato-info p {
+    display: inherit;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+
+  .contato-info {
+    margin-bottom: 2rem;
+  }
+  .contato-info h2 {
+    color: var(--white);
+    font-size: 3rem;
+  }
+
+  .campos-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: inherit;
+    column-gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .campos-form select {
+    width: 100%;
+  }
+}
+
+/* 
+==============
+Footer
+==============
+*/
+
+.rodape {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  align-items: center;
+}
+
+.rodape img {
+  max-height: 50px;
+  margin: 0 auto;
+}
+.rodape p {
+  color: var(--clr-blue);
+  font-size: 14px;
+  align-self: flex-end;
+  margin-top: 3rem;
+  text-align: ce;
+}
+
+@media screen and (min-width: 992px) {
+  .rodape p {
+    color: var(--clr-blue);
+    font-size: 18px;
+    align-self: flex-end;
+  }
+}
