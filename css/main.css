@@ -336,6 +336,234 @@ ul {
 }
 
 /* 
+==============
+off canvas catarata
+==============
+*/
+
+/* Offcanvas global styles - affects all side bars */
+
+.offcanvas-info {
+  padding: 2rem;
+}
+
+.offcanvas-info h2 {
+  color: var(--clr-green-5);
+}
+.offcanvas-info h3 {
+  color: var(--clr-blue);
+  font-size: 1.4rem;
+}
+
+/* botao que ativa */
+.catarata-btn {
+  cursor: pointer;
+}
+
+/* a barra em si */
+.cataratabar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background: var(--white);
+  overflow: auto;
+  /* hide navbar */
+  transform: translateX(-100%);
+  transition: var(--transition);
+}
+
+/* classe que mostra a barra */
+.showCatarata {
+  transform: translate(0);
+}
+
+/* botao que fecha a barra */
+.catarata-close {
+  position: absolute;
+  right: 10%;
+  top: 0;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #f29c9c;
+  transition: var(--transition);
+}
+
+.catarata-close:hover {
+  color: #bb2525;
+}
+
+@media screen and (min-width: 768px) {
+  /* tamanho da barra no desktop */
+  .cataratabar {
+    width: 40vw;
+    max-width: 30rem;
+  }
+}
+/* 
+==============
+off canvas refrativa
+==============
+*/
+
+/* botao que ativa */
+.refrativa-btn {
+  cursor: pointer;
+}
+
+/* a barra em si */
+.refrativabar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background: var(--white);
+  overflow: auto;
+  /* hide navbar */
+  transform: translateX(-100%);
+  transition: var(--transition);
+}
+
+/* classe que mostra a barra */
+.showRefrativa {
+  transform: translate(0);
+}
+
+/* botao que fecha a barra */
+.refrativa-close {
+  position: absolute;
+  right: 10%;
+  top: 0;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #f29c9c;
+  transition: var(--transition);
+}
+
+.refrativa-close:hover {
+  color: #bb2525;
+}
+
+@media screen and (min-width: 768px) {
+  /* tamanho da barra no desktop */
+  .refrativabar {
+    width: 40vw;
+    max-width: 30rem;
+  }
+}
+/* 
+==============
+off canvas demais cirurgias
+==============
+*/
+
+/* botao que ativa */
+.cirurgias-btn {
+  cursor: pointer;
+}
+
+/* a barra em si */
+.cirurgiasbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background: var(--white);
+  overflow: auto;
+  /* hide navbar */
+  transform: translateX(-100%);
+  transition: var(--transition);
+}
+
+/* classe que mostra a barra */
+.showCirurgias {
+  transform: translate(0);
+}
+
+/* botao que fecha a barra */
+.cirurgias-close {
+  position: absolute;
+  right: 10%;
+  top: 0;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #f29c9c;
+  transition: var(--transition);
+}
+
+.cirurgias-close:hover {
+  color: #bb2525;
+}
+
+@media screen and (min-width: 768px) {
+  /* tamanho da barra no desktop */
+  .cirurgiasbar {
+    width: 40vw;
+    max-width: 30rem;
+  }
+}
+
+/* 
+==============
+Genereic pre-made color blocs 
+==============
+*/
+
+.color-infoblock {
+  padding: 2rem;
+}
+.color-infoblock h3 {
+  font-size: 1.2rem;
+  text-transform: none;
+}
+
+.block1 {
+  background: var(--clr-teal);
+  color: var(--white);
+}
+.block1 {
+  background: var(--clr-teal);
+  color: var(--white);
+}
+.block1 h3 {
+  color: var(--clr-yellow);
+}
+.block2 {
+  background: var(--clr-orange-5);
+  color: var(--white);
+}
+.block2 h3 {
+  color: var(--clr-blue);
+}
+.block3 {
+  background: var(--clr-green-5);
+  color: var(--white);
+}
+.block3 h3 {
+  color: var(--clr-orange-10);
+}
+.block4 {
+  background: var(--clr-yellow);
+  color: var(--clr-blue);
+}
+.block4 h3 {
+  color: var(--clr-green-10);
+}
+.block5 {
+  background: var(--clr-blue);
+  color: var(--white);
+}
+.block5 h3 {
+  color: var(--clr-yellow);
+}
+
+/* 
 =========================================
 Website Sections
 =========================================
@@ -426,13 +654,13 @@ Navbar
 */
 
 .navbar {
-  /* position: fixed; */
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   background: var(--clr-grey-1);
   box-shadow: var(--dark-shadow);
-  z-index: 2;
+  z-index: 10;
 }
 
 .nav-center {
@@ -580,6 +808,48 @@ Banner
     padding-top: 2rem;
     gap: 1rem;
   }
+}
+
+/* 
+Video Modal  
+*/
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 30; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; /*Could be more or less, depending on screen size*/
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* 

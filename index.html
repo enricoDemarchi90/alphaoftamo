@@ -14,7 +14,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <div class="main-header">
+    <div class="main-header" id="topo">
       <div class="top-header">
         <img src="./img/logo-alpha.svg" alt="logo-alpha" />
 
@@ -103,7 +103,7 @@
     </nav>
     <!-- End of Navbar -->
     <!-- Banner -->
-    <div class="banner" id="topo">
+    <section class="banner">
       <div class="container split-section">
         <div class="banner-info">
           <h3 class="banner-subtitle">
@@ -114,8 +114,8 @@
           </h1>
           <div class="banner-buttons">
             <a href="#contato" class="btn btn-orange">AGENDE SUA CONSULTA</a>
-            <div class="btn-video">
-              <a href="#contato" class="btn-header"
+            <div class="btn-video" id="videobtn">
+              <a href="#" class="btn-header"
                 ><img src="./img/play.png" />Conheça a Alpha</a
               >
             </div>
@@ -129,10 +129,26 @@
           />
         </div>
       </div>
-    </div>
+      <!-- Video Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/GAuBpt561Yg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
     <!-- End of Banner -->
     <!-- About Us -->
-    <div class="sobre-nos" id="sobre">
+    <section class="sobre-nos" id="sobre">
       <div class="container split-section">
         <img src="./img/alpha-grafismo-1.png" alt="" class="img bg-img" />
         <div class="sobre-header">
@@ -158,11 +174,11 @@
           </p>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- End of About US -->
     <!-- Features -->
-    <div class="features container" id="destaques">
+    <section class="features container" id="destaques">
       <img
         src="./img/padrao-quadrados-coloridos-alpha-1.png"
         alt=""
@@ -301,7 +317,7 @@
         <!-- End of single card -->
         <a href="#contato" class="btn btn-orange">AGENDE SUA CONSULTA</a>
       </div>
-    </div>
+    </section>
     <!-- End of Features -->
     <!-- Cirurgias -->
     <section class="cirurgias split-section" id="cirurgias">
@@ -316,11 +332,256 @@
           oculares, como catarata e refrativa.
         </p>
         <div class="botoes-cirurgias">
-          <button type="button" class="btn btn-green">Catarata</button>
-          <button type="button" class="btn btn-green">Refrativa</button>
-          <button type="button" class="btn btn-green">Todas</button>
+          <button
+            type="button"
+            class="btn btn-green catarata-btn"
+            id="catarata-btn"
+          >
+            Catarata
+          </button>
+          <button
+            type="button"
+            class="btn btn-green refrativa-btn"
+            id="refrativa-btn"
+          >
+            Refrativa
+          </button>
+          <button type="button" class="btn btn-green" id="cirurgias-btn">
+            Todas
+          </button>
         </div>
       </div>
+      <!-- Catarata Offcanvas -->
+      <section class="cataratabar" id="cataratabar">
+        <span class="catarata-close" id="catarata-close"
+          ><i class="fas fa-times"></i
+        ></span>
+        <article class="offcanvas-info">
+          <h2 class="sub-title">Cirurgia de Catarata</h2>
+          <h3>Acabe com a visão embaçada</h3>
+          <p>
+            A Catarata nada mais é do que a perda da transparência do
+            cristalino. Ao contrário do que se imagina, esse problema de visão
+            não atinge apenas idosos. Existem outros fatores que podem causar
+            catarata em diferentes fases da vida, como: predisposição genética
+            (congênita), acidentes (traumática), diabetes e o uso de certos
+            medicamentos. Os principais sintomas são: Sensação de visão embaçada
+            Maior sensibilidade à luz Alteração de percepção de cores Mudança
+            frequente no grau dos óculos A cirurgia de catarata é um
+            procedimento moderno e seguro que consiste na substituição do
+            cristalino opacificado por uma lente intraocular artificial. Nós Da
+            Alpha Diagnose contamos com uma equipe qualificada e experiente para
+            a realização do procedimento.
+          </p>
+        </article>
+        <!-- Infoblock offcanvas 1 -->
+        <article class="block1">
+          <div class="color-infoblock">
+            <h3>O que você precisa saber sobre a Cirurgia de Catarata?</h3>
+            <p>
+              É o procedimento indicado para a remoção do cristalino (lente
+              natural de dentro do nosso olho) que se tornou opaca, impedindo a
+              melhora da visão.
+            </p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 1 -->
+        <!-- Infoblock offcanvas 4 -->
+        <article class="block4">
+          <div class="color-infoblock">
+            <h3>O que você precisa saber sobre a Cirurgia de Catarata?</h3>
+            <p>
+              É o procedimento indicado para a remoção do cristalino (lente
+              natural de dentro do nosso olho) que se tornou opaca, impedindo a
+              melhora da visão.
+            </p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 4 -->
+        <!-- Infoblock offcanvas 5 -->
+        <article class="block5">
+          <div class="color-infoblock">
+            <h3>O que você precisa saber sobre a Cirurgia de Catarata?</h3>
+            <p>
+              É o procedimento indicado para a remoção do cristalino (lente
+              natural de dentro do nosso olho) que se tornou opaca, impedindo a
+              melhora da visão.
+            </p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 5 -->
+        <!-- Infoblock offcanvas 2 -->
+        <article class="block2">
+          <div class="color-infoblock">
+            <h3>O que você precisa saber sobre a Cirurgia de Catarata?</h3>
+            <p>
+              É o procedimento indicado para a remoção do cristalino (lente
+              natural de dentro do nosso olho) que se tornou opaca, impedindo a
+              melhora da visão.
+            </p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 2 -->
+        <!-- Infoblock offcanvas 3 -->
+        <article class="block3">
+          <div class="color-infoblock">
+            <h3>O que você precisa saber sobre a Cirurgia de Catarata?</h3>
+            <p>
+              É o procedimento indicado para a remoção do cristalino (lente
+              natural de dentro do nosso olho) que se tornou opaca, impedindo a
+              melhora da visão.
+            </p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 3 -->
+      </section>
+      <!-- End of Catarata Offcanvas -->
+      <!-- Refrativa Offcanvas -->
+      <section class="refrativabar" id="refrativabar">
+        <span class="refrativa-close" id="refrativa-close"
+          ><i class="fas fa-times"></i
+        ></span>
+        <article class="offcanvas-info">
+          <h2 class="sub-title">Cirurgia Refrativa</h2>
+          <h3>Veja a vida sem óculos e lentes de contato!</h3>
+          <p>
+            A cirurgia refrativa é um procedimento minimamente invasivo indicado
+            para quem procura mais autonomia visual. É um procedimento rápido e
+            seguro que utiliza o laser para correção dos erros de refração mais
+            comuns, como: a miopia, o astigmatismo e a hipermetropia. A alta é
+            imediata, o desconforto pós-operatório é mínimo e a recuperação é
+            rápida.
+          </p>
+        </article>
+        <!-- Infoblock offcanvas 1 -->
+        <article class="block5">
+          <div class="color-infoblock">
+            <h3>O que você precisa saber sobre a Cirurgia Refrativa?</h3>
+            <p>
+              A Cirurgia Refrativa tem como objetivo diminuir a dependência do
+              paciente ao uso dos óculos ou lentes de contato. Possui indicações
+              específicas após uma avaliação oftalmológica completa, com exames
+              clínicos e de imagem.
+            </p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 1 -->
+        <!-- Infoblock offcanvas 4 -->
+        <article class="block1">
+          <div class="color-infoblock">
+            <h3>Riscos</h3>
+            <p>
+              Toda cirurgia possui riscos, mas os riscos da cirurgia refrativa
+              são mínimos, já que a cirurgia ocorre apenas na córnea (parte
+              externa do olho).
+            </p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 4 -->
+        <!-- Infoblock offcanvas 5 -->
+        <article class="block4">
+          <div class="color-infoblock">
+            <h3>Causa Dor?</h3>
+            <p>
+              Não, com a aplicação de colírios anestésicos o procedimento é
+              indolor. Pode haver um incômodo no pós-operatório que é amenizado
+              por medicações adequadamente prescritas.
+            </p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 5 -->
+        <!-- Infoblock offcanvas 2 -->
+        <article class="block2">
+          <div class="color-infoblock">
+            <h3>Indicações</h3>
+            <p>
+              Para pacientes com grau estável e espessura e curvatura corneanas
+              adequadas.
+            </p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 2 -->
+        <!-- Infoblock offcanvas 3 -->
+        <article class="block3">
+          <div class="color-infoblock">
+            <h3>Duração</h3>
+            <p>
+              Para pacientes com grau estável e espessura e curvatura corneanas
+              adequadas.
+            </p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 3 -->
+      </section>
+      <!-- End of Refrativa Offcanvas -->
+      <!-- Demais Cirurgias Offcanvas -->
+      <section class="cirurgiasbar" id="cirurgiasbar">
+        <span class="cirurgias-close" id="cirurgias-close"
+          ><i class="fas fa-times"></i
+        ></span>
+        <article class="offcanvas-info">
+          <h2 class="sub-title">
+            OFERECEMOS O QUE HÁ DE MAIS INOVADOR EM CIRURGIAS OFTALMOLÓGICAS
+          </h2>
+          <h3>Cirurgia de Retina e Vítreo</h3>
+          <p>
+            Essa cirurgia é realizada para tratar doenças que acometem a parte
+            posterior do olho, a retina, como por exemplo descolamento de
+            retina, hemorragias, retinopatia diabética, entre outras indicações.
+          </p>
+        </article>
+        <!-- Infoblock offcanvas 1 -->
+        <article class="block2">
+          <div class="color-infoblock">
+            <h3>Plástica Ocular</h3>
+            <p>
+              Oferecemos desde os mais modernos procedimentos estéticos, como:
+              (toxina botulínica e cirurgias), até os mais funcionais
+              (distorções palpebrais que precisam ser corrigidas).
+            </p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 1 -->
+        <!-- Infoblock offcanvas 4 -->
+        <article class="block4">
+          <div class="color-infoblock">
+            <h3>Estrabismo</h3>
+            <p>
+              A Cirurgia de Estrabismo é voltada para corrigir a estética do
+              alinhamento ocular.
+            </p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 4 -->
+        <!-- Infoblock offcanvas 5 -->
+        <article class="block1">
+          <div class="color-infoblock">
+            <h3>Ceratocone</h3>
+            <p>
+              Estabiliza a curvatura corneana, diminuindo a evolução do
+              ceratocone.
+            </p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 5 -->
+        <!-- Infoblock offcanvas 2 -->
+        <article class="block3">
+          <div class="color-infoblock">
+            <h3>Vias Lacrimais</h3>
+            <p>Indicada para refazer o sistema de drenagem da lágrima.</p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 2 -->
+        <!-- Infoblock offcanvas 3 -->
+        <article class="block5">
+          <div class="color-infoblock">
+            <h3>Glaucoma</h3>
+            <p>Cirurgia para se obter o manejo da pressão intraocular.</p>
+          </div>
+        </article>
+        <!-- End of Infoblock offcanvas 3 -->
+      </section>
+      <!-- End of Demais cirurgias Offcanvas -->
     </section>
 
     <!-- End of Cirurgias -->
